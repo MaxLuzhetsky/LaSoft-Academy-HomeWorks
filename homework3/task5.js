@@ -1,4 +1,4 @@
-function getFactorial(n){
+function getFibonacci(n){
     let arr = [0,1]
     for (let i=2 ; i <= n ; i++){
         let prevN1 = arr[i-1]
@@ -7,4 +7,4 @@ function getFactorial(n){
     }
     console.log(arr[arr.length-1])
 }
-getFactorial(10)
+getFibonacci(10)
