@@ -9,8 +9,8 @@ function Check(str){
       }else{
         result = false
       }
-      console.log(result)
     }
+    console.log(result)
   }
-  Check("")
+  Check("iffa")
   
