@@ -14,15 +14,29 @@ function WorkingPersonFunc(name, lastname, job, exp) {
         this.jobExp = exp;
 
     this.getProfessionalNameAndRank = function () {
-        console.log(this.firstName + " " + this.lastName + " " + this.job + " " + this.jobExp)
-    }
-    this.checkError = function () {
-        if (!this.firstName || !this.lastName || !this.job || !this.jobExp) {
-            throw "Something wrong"
-        } else {
-            throw "Everything good"
+        let error = ""
+        try {
+
+            if (!this.firstName) {
+                error = "First name is missing"
+                throw new SyntaxError(error);
+            } else if (!this.lastName) {
+                error = "Last name is missing"
+                throw new SyntaxError(error);
+            } else if (!this.job) {
+                error = "Job title is missing"
+                throw new SyntaxError(error);
+            } else if (!this.jobExp) {
+                error = "Job experience is missing"
+                throw new SyntaxError(error);
+            }
+            console.log(this.firstName + " " + this.lastName + " " + this.job + " " + this.jobExp)
+        } catch (err) {
+            console.log(error)
         }
+
     }
+
     Object.setPrototypeOf(WorkingPersonFunc.prototype, PersonFunc.prototype);
 
 }
@@ -46,4 +60,3 @@ const SarahMay = {
 
 const job = new WorkingPersonFunc(SarahMay.firstName, SarahMay.lastName, SarahMay.job.title, SarahMay.job.experience)
 job.getProfessionalNameAndRank();
-job.checkError();

@@ -1,4 +1,4 @@
-function PersonFunc(name , lastname , birth , address) {
+function PersonFunc(name, lastname, birth, address) {
 
     this.firstName = name,
         this.lastName = lastname,
@@ -6,25 +6,62 @@ function PersonFunc(name , lastname , birth , address) {
         this.address = address;
 
     this.fullName = function () {
-        console.log(this.firstName + " " + this.lastName)
-    }
-    this.getAge = function () {
-        let age = this.age
-        let arr = age.split('.')
-        let result = 2022 - arr[arr.length - 1]
-        console.log(result + " " + "years")
-    }
-    this.getFullAddress = function () {
-        let address = this.address
-        console.log(address.country + ", " + address.city + ", " + address.street + ", " + address.house + ", " + address.apartment)
-    }
-    this.checkError = function(){
-        if(!this.firstName ||!this.lastName ||!this.age ||!this.address){
-            throw "Something wrong"
-        }else{
-            throw "Everything good"
+        try {
+            if (!this.firstName || !this.lastName) {
+                throw new SyntaxError("First name or Full name is missing");
+            }
+            console.log(this.firstName + " " + this.lastName)
+
+        } catch (e) {
+
+            if (e.name == "SyntaxError") {
+                console.log("First name or Full name is missing");
+            } else {
+                throw e;
+            }
+
         }
     }
+    this.getAge = function () {
+        try {
+            if (!this.age) {
+                throw new SyntaxError("Birth date is missing");
+            }
+            let age = this.age
+            let arr = age.split('.')
+            let result = 2022 - arr[arr.length - 1]
+            console.log(result + " " + "years")
+
+        } catch (e) {
+
+            if (e.name == "SyntaxError") {
+                console.log("Birth date is missing");
+            } else {
+                throw e;
+            }
+
+        }
+
+    }
+    this.getFullAddress = function () {
+        try {
+            if (!this.address) {
+                throw new SyntaxError("Address is missing");
+            }
+            let address = this.address
+            console.log(address.country + ", " + address.city + ", " + address.street + ", " + address.house + ", " + address.apartment)
+
+        } catch (e) {
+
+            if (e.name == "SyntaxError") {
+                console.log("Address is missing");
+            } else {
+                throw e;
+            }
+
+        }
+    }
+
 }
 
 const SarahMay = {
@@ -47,4 +84,3 @@ const pers = new PersonFunc(SarahMay.firstName, SarahMay.lastName, SarahMay.birt
 pers.fullName();
 pers.getAge();
 pers.getFullAddress();
-pers.checkError();

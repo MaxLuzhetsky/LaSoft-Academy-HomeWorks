@@ -1,5 +1,5 @@
 class PersonFunc {
-    constructor(name , lastname , birth , address) {
+    constructor(name, lastname, birth, address) {
         this.firstName = name,
             this.lastName = lastname,
             this.age = birth,
@@ -8,20 +8,33 @@ class PersonFunc {
 }
 
 class WorkingPersonClass extends PersonFunc {
-    constructor(name , lastname , job , exp){
-        super(name , lastname);
-        this.job = job ;
+    constructor(name, lastname, job, exp) {
+        super(name, lastname);
+        this.job = job;
         this.jobExp = exp;
     }
-     getProfessionalNameAndRank() {
-        console.log(this.firstName + " " + this.lastName + " " + this.job + " " + this.jobExp)
-    }
-    checkError(){
-        if (!this.firstName || !this.lastName || !this.job || !this.jobExp) {
-            throw "Something wrong"
-        } else {
-            throw "Everything good"
+    getProfessionalNameAndRank() {
+        let error = ""
+        try {
+
+            if (!this.firstName) {
+                error = "First name is missing"
+                throw new SyntaxError(error);
+            } else if (!this.lastName) {
+                error = "Last name is missing"
+                throw new SyntaxError(error);
+            } else if (!this.job) {
+                error = "Job title is missing"
+                throw new SyntaxError(error);
+            } else if (!this.jobExp) {
+                error = "Job experience is missing"
+                throw new SyntaxError(error);
+            }
+            console.log(this.firstName + " " + this.lastName + " " + this.job + " " + this.jobExp)
+        } catch (err) {
+            console.log(error)
         }
+
     }
 }
 const SarahMay = {
@@ -43,4 +56,3 @@ const SarahMay = {
 
 const job = new WorkingPersonClass(SarahMay.firstName, SarahMay.lastName, SarahMay.job.title, SarahMay.job.experience);
 job.getProfessionalNameAndRank();
-job.checkError();
