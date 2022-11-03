@@ -1,9 +1,9 @@
-function PersonFunc(person) {
+function PersonFunc(name , lastname , birth , address) {
 
-    this.firstName = person.firstName,
-        this.lastName = person.lastName,
-        this.age = person.birthDate,
-        this.address = person.address;
+    this.firstName = name,
+        this.lastName = lastname,
+        this.age = birth,
+        this.address = address;
 
     this.fullName = function () {
         console.log(this.firstName + " " + this.lastName)
@@ -16,7 +16,14 @@ function PersonFunc(person) {
     }
     this.getFullAddress = function () {
         let address = this.address
-        console.log(address.country + " " + address.city + " " + address.street + " " + address.house + " " + address.apartment)
+        console.log(address.country + ", " + address.city + ", " + address.street + ", " + address.house + ", " + address.apartment)
+    }
+    this.checkError = function(){
+        if(!this.firstName ||!this.lastName ||!this.age ||!this.address){
+            throw "Something wrong"
+        }else{
+            throw "Everything good"
+        }
     }
 }
 
@@ -36,7 +43,8 @@ const SarahMay = {
         experience: 5
     }
 }
-const pers = new PersonFunc(SarahMay);
+const pers = new PersonFunc(SarahMay.firstName, SarahMay.lastName, SarahMay.birthDate, SarahMay.address);
 pers.fullName();
 pers.getAge();
 pers.getFullAddress();
+pers.checkError();

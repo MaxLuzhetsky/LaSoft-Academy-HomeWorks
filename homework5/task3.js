@@ -1,9 +1,9 @@
 class PersonFunc {
-    constructor(person) {
-        this.firstName = person.firstName,
-            this.lastName = person.lastName,
-            this.age = person.birthDate,
-            this.address = person.address;
+    constructor(name , lastname , birth , address) {
+        this.firstName = name,
+            this.lastName = lastname,
+            this.age = birth,
+            this.address = address;
     }
     fullName() {
         console.log(this.firstName + " " + this.lastName)
@@ -16,7 +16,15 @@ class PersonFunc {
     }
     getFullAddress() {
         let address = this.address
-        console.log(address.country + " " + address.city + " " + address.street + " " + address.house + " " + address.apartment)
+        console.log(address.country + ", " + address.city + ", " + address.street + ", " + address.house + ", " + address.apartment)
+    }
+
+    checkError(){
+        if(!this.firstName ||!this.lastName ||!this.age ||!this.address){
+            throw "Something wrong"
+        }else{
+            throw "Everything good"
+        }
     }
 }
 const SarahMay = {
@@ -36,7 +44,8 @@ const SarahMay = {
     }
 }
 
-const pers = new PersonFunc(SarahMay);
+const pers = new PersonFunc(SarahMay.firstName, SarahMay.lastName, SarahMay.birthDate, SarahMay.address);
 pers.fullName();
 pers.getAge();
 pers.getFullAddress();
+pers.checkError();
