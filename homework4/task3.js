@@ -1,8 +1,8 @@
-function arrayDivisionFactory(num){
+function arrayDivisionFactory(array, num){
     function divideF(arr){
         let result = arr.map(el => el/num)
         console.log(result)
     }
-   divideF([10, 20, 25])
+   divideF(array)
   }
-  arrayDivisionFactory(5)
+  arrayDivisionFactory([10, 20, 25],5)

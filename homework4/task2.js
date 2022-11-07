@@ -1,8 +1,8 @@
-function plusFactory(a) {
-    function plusF(b){
-         console.log(a+b) 
-        
+function plusFactory(a,b) {
+     function plusF(el){
+          console.log(a+b) 
+         
+     }
+       plusF(b)
     }
-      plusF(10)
-   }
-   plusFactory(188)
+    plusFactory(188 , 10)

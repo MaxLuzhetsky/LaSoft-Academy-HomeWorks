@@ -9,6 +9,7 @@ function getNameScore (name) {
 }
    let arr = name.split('')
    let result = 0 
+   let message = ""
    
   for (let el in scores){
       for (let i=0 ; i < arr.length;i++){
@@ -19,15 +20,16 @@ function getNameScore (name) {
   }
   
   if(result >= 600){
-      console.log("THE BEST")
+    message = "THE BEST"
+      console.log()
   }else if (301 <= result && result <= 599){
-      console.log("VERY GOOD")
+    message = "VERY GOOD"
   }else if (61 <= result && result <= 300){
-      console.log("PRETTY GOOD")
+    message =  "PRETTY GOOD"
   }else if (result <= 60){
-      console.log("NOT TOO GOOD")
+    message =  "NOT TOO GOOD"
   }
-  console.log(result)
+  console.log(`Your result ${result} , which is ${message}`)
 }
 getNameScore("max")
 
