@@ -14,6 +14,7 @@ function WorkingPersonFunc(name, lastname, job, exp) {
         this.jobExp = exp;
 
     this.getProfessionalNameAndRank = function () {
+        let result = ""
         let error = ""
         try {
 
@@ -30,10 +31,14 @@ function WorkingPersonFunc(name, lastname, job, exp) {
                 error = "Job experience is missing"
                 throw new SyntaxError(error);
             }
-            console.log(this.firstName + " " + this.lastName + " " + this.job + " " + this.jobExp)
+           
         } catch (err) {
-            console.log(error)
+            throw err
         }
+
+        result = this.firstName + " " + this.lastName + " " + this.job + " " + this.jobExp
+
+        return result 
 
     }
 
@@ -59,4 +64,4 @@ const SarahMay = {
 }
 
 const job = new WorkingPersonFunc(SarahMay.firstName, SarahMay.lastName, SarahMay.job.title, SarahMay.job.experience)
-job.getProfessionalNameAndRank();
+console.log(job.getProfessionalNameAndRank());

@@ -14,6 +14,7 @@ class WorkingPersonClass extends PersonFunc {
         this.jobExp = exp;
     }
     getProfessionalNameAndRank() {
+        let result = ""
         let error = ""
         try {
 
@@ -30,11 +31,14 @@ class WorkingPersonClass extends PersonFunc {
                 error = "Job experience is missing"
                 throw new SyntaxError(error);
             }
-            console.log(this.firstName + " " + this.lastName + " " + this.job + " " + this.jobExp)
+           
         } catch (err) {
-            console.log(error)
+            throw err
         }
 
+        result = this.firstName + " " + this.lastName + " " + this.job + " " + this.jobExp
+
+        return result 
     }
 }
 const SarahMay = {
@@ -55,4 +59,4 @@ const SarahMay = {
 }
 
 const job = new WorkingPersonClass(SarahMay.firstName, SarahMay.lastName, SarahMay.job.title, SarahMay.job.experience);
-job.getProfessionalNameAndRank();
+console.log(job.getProfessionalNameAndRank());

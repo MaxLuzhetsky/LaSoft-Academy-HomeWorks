@@ -6,60 +6,63 @@ function PersonFunc(name, lastname, birth, address) {
         this.address = address;
 
     this.fullName = function () {
+        let result = ""
         try {
             if (!this.firstName || !this.lastName) {
                 throw new SyntaxError("First name or Full name is missing");
             }
-            console.log(this.firstName + " " + this.lastName)
+
 
         } catch (e) {
 
-            if (e.name == "SyntaxError") {
-                console.log("First name or Full name is missing");
-            } else {
+            
                 throw e;
-            }
+            
 
         }
+        result = this.firstName + " " + this.lastName
+        return result;
     }
     this.getAge = function () {
+        let result = ""
         try {
             if (!this.age) {
                 throw new SyntaxError("Birth date is missing");
             }
-            let age = this.age
-            let arr = age.split('.')
-            let result = 2022 - arr[arr.length - 1]
-            console.log(result + " " + "years")
 
         } catch (e) {
 
-            if (e.name == "SyntaxError") {
-                console.log("Birth date is missing");
-            } else {
+            
                 throw e;
-            }
+            
 
         }
+        let age = this.age
+        let arr = age.split('.')
+        let years = 2022 - arr[arr.length - 1]
+        result = years + " " + "years"
+        return result;
 
     }
     this.getFullAddress = function () {
+        let result = ""
         try {
             if (!this.address) {
                 throw new SyntaxError("Address is missing");
             }
-            let address = this.address
-            console.log(address.country + ", " + address.city + ", " + address.street + ", " + address.house + ", " + address.apartment)
+
+
 
         } catch (e) {
 
-            if (e.name == "SyntaxError") {
-                console.log("Address is missing");
-            } else {
+            
                 throw e;
-            }
+            
 
         }
+        let address = this.address
+        result = address.country + ", " + address.city + ", " + address.street + ", " + address.house + ", " + address.apartment
+        return result;
     }
 
 }
@@ -81,6 +84,6 @@ const SarahMay = {
     }
 }
 const pers = new PersonFunc(SarahMay.firstName, SarahMay.lastName, SarahMay.birthDate, SarahMay.address);
-pers.fullName();
-pers.getAge();
-pers.getFullAddress();
+console.log(pers.fullName())
+console.log(pers.getAge())
+console.log(pers.getFullAddress())
