@@ -1,0 +1,22 @@
+body{
+    width: 100%;
+    min-height: 900px;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.input-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#search-btn , #random-btn , #input-container {
+    max-width: 400px;
+    height: auto;
+}
+#output-container{
+    text-align: center;
+}
