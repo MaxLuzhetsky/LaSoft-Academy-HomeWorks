@@ -28,13 +28,13 @@ export default function Header() {
 
                     <div className="nav">
                         <div className="nav-wrapper">
-                            <div>
+                            <nav>
                                 <a className="burger_menu_bttn" href="#">Courses</a><br />
                                 <a className="burger_menu_bttn" href="#">Teachers</a><br />
                                 <a className="burger_menu_bttn" href="#">Prices</a><br />
                                 <a className="burger_menu_bttn" href="#">About us</a>
 
-                            </div>
+                            </nav>
                         </div>
                     </div>
                 </div>
