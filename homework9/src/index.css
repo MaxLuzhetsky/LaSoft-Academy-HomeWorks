@@ -149,6 +149,7 @@
         color: white;
         text-decoration: none;
     }
+
     .top_section {
         display: flex;
         flex-direction: column;
@@ -291,6 +292,7 @@
         color: white;
         text-decoration: none;
     }
+
     .footer_menu_bttn:active {
         font-style: normal;
         text-decoration-line: underline;
@@ -360,6 +362,23 @@
         font-weight: bolder;
         transition: 0.5s;
         color: black;
+    }
+
+    .nav_menu_bttn.active {
+        font-family: 'Baloo 2';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 22px;
+        /* identical to box height */
+
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        /* Primary/Main 10 */
+
+        color: #59ABB0;
     }
 
     .nav_menu_container {
@@ -508,6 +527,7 @@
         color: white;
         text-decoration: none;
     }
+
     .footer_menu_bttn:hover {
         font-style: normal;
         text-decoration-line: underline;

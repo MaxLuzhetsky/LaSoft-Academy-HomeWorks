@@ -35,21 +35,21 @@ export default function CoursesMain() {
                             <img src={course.thumbnail_img_url} ></img>
                             <div  className='course-info'>
                                 <div className='name-and-price' >
-                                    <h4>{course.name}</h4>
-                                    <p>${course.price}</p>
+                                    <h4 className='course-title'>{course.name}</h4>
+                                    <p className='course-price'>${course.price}</p>
                                 </div>
                                 <div className='course-level'>
                                     <span>Level:</span>
-                                    <p>{course.level}</p>
+                                    <p className='level-duration'>{course.level}</p>
                                 </div>
                                 <div className='course-duration'>
                                     <span>Duration</span>
                                     <div>
-                                    <p>{course.duration}</p>
-                                    <p>{course.periodicity}</p>
+                                    <p className='level-duration' >{course.duration}</p>
+                                    <p className='level-duration'>{course.periodicity}</p>
                                     </div>
                                 </div>
-                                <p>{course.description_short}</p>
+                                <p className='course-description'>{course.description_short}</p>
                                 <button className='course-apply-button'>Apply</button>
                             </div>
                         </div>

@@ -1,19 +1,26 @@
 
 import logo from "../img/logo-SA.png"
-import React from 'react'
+import React, { useState } from 'react'
 import {Link} from 'react-router-dom'
 
 export default function Header() {
+    const [activeCourse , setActiveCourse] = useState(false)
+    
+   
+
+    
     return (
         <>
 
             <section>
                 <div className="header_container">
+                    <Link to="/">
                     <img className="header_logo" src={logo} />
+                    </Link>
                     <div className="nav_menu_container">
                         <ul className="nav_menu">
-                            <Link to="/courses">
-                            <li><a className="nav_menu_bttn" href="">Courses</a></li>
+                            <Link onClick={() => setActiveCourse(true)} className={activeCourse ? "nav_menu_bttn active" :"nav_menu_bttn" } to="/courses">
+                            <li>Courses</li>
                             </Link>
                             <li><a className="nav_menu_bttn" href="">Teachers</a></li>
                             <li><a className="nav_menu_bttn" href="">Prices</a></li>
