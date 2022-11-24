@@ -1,4 +1,4 @@
-import "../index.css"
+
 import topImage from "../img/top.png"
 import botImage from "../img/bot.png"
 import React from 'react'

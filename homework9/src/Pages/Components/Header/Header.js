@@ -1,6 +1,7 @@
-import "../index.css"
+
 import logo from "../img/logo-SA.png"
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 export default function Header() {
     return (
@@ -11,7 +12,9 @@ export default function Header() {
                     <img className="header_logo" src={logo} />
                     <div className="nav_menu_container">
                         <ul className="nav_menu">
+                            <Link to="/courses">
                             <li><a className="nav_menu_bttn" href="">Courses</a></li>
+                            </Link>
                             <li><a className="nav_menu_bttn" href="">Teachers</a></li>
                             <li><a className="nav_menu_bttn" href="">Prices</a></li>
                             <li><a className="nav_menu_bttn" href="">About us</a></li>

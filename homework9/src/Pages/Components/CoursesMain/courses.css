@@ -1,0 +1,17 @@
+.courses-container{
+    display: flex;
+    flex-direction: column;
+    margin: 47px 135px 28px 135px;
+}
+.name-and-price{
+    display: flex;
+    justify-content: space-between;
+}
+.course-content{
+    max-width: 280px;
+    max-height: 372px;
+}
+.course-level{
+    display: flex;
+    justify-content: space-between;
+}
