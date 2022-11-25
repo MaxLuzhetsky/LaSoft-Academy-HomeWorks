@@ -6,9 +6,6 @@ import {Link} from 'react-router-dom'
 export default function Header() {
     const [activeCourse , setActiveCourse] = useState(false)
     
-   
-
-    
     return (
         <>
 
@@ -22,7 +19,7 @@ export default function Header() {
                             <Link onClick={() => setActiveCourse(true)} className={activeCourse ? "nav_menu_bttn active" :"nav_menu_bttn" } to="/courses">
                             <li>Courses</li>
                             </Link>
-                            <Link className="nav_menu_bttn" to="/courses">
+                            <Link className="nav_menu_bttn" to="/teachers">
                             <li><a className="nav_menu_bttn" href="">Teachers</a></li>
                             </Link>
                             <Link  className="nav_menu_bttn"  to="/courses">

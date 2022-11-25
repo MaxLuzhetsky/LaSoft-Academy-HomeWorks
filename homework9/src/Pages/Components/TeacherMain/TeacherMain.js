@@ -1,24 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import './teacher.css'
+import { useGetAllTeachersQuery } from '../../../Redux/apiService'
 
 export default function TeacherMain() {
 
-    const [teachers, setTeachers] = useState([])
-    useEffect(() => {
-        fetch("http://localhost:5000/teachers")
-            .then((response) => {
-                return response.json();
-            })
-            .then((data) => {
-                setTeachers(data);
-            });
-    }, [])
+    const {data:teachers,...others} = useGetAllTeachersQuery()
 
     return (
         <div className='teachers-container'>
             <h3 className='teachers-title'>Meet our great team!</h3>
             <div className='teachers-list'>
-                {teachers.map((teacher) => (
+                {teachers?.map((teacher) => (
                     <div key={teacher.id} className='teacher-content'>
                         <img src={teacher.photo}></img>
                         <h4 className='teacher-name'>{teacher.first_name} {teacher.last_name}</h4>

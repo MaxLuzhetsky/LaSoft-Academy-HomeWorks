@@ -3,25 +3,24 @@ import './courses.css'
 import { useGetAllCoursesQuery } from '../../../Redux/apiService'
 
 export default function CoursesMain() {
+     
 
+
+    const { data:courses, ...others } = useGetAllCoursesQuery()
     
 
-    const {data:courses,...others} = useGetAllCoursesQuery()
-   
 
 
 
     return (
         <div className='courses-container'>
-            <h3 className='courses-title' >Pick your perfect course</h3>
-            <div className='courses-list' >
-
-                {courses.map((course) => (
-
-                    <div  className='course-content'>
+            <h3 className='courses-title'>Pick your perfect course</h3>
+            <div className='courses-list'>
+                {courses?.map((course) => (
+                    <div key={course.id} className='course-content'>
                         <div>
                             <img src={course.thumbnail_img_url} ></img>
-                            <div  className='course-info'>
+                            <div className='course-info'>
                                 <div className='name-and-price' >
                                     <h4 className='course-title'>{course.name}</h4>
                                     <p className='course-price'>${course.price}</p>
@@ -33,8 +32,8 @@ export default function CoursesMain() {
                                 <div className='course-duration'>
                                     <span>Duration</span>
                                     <div>
-                                    <p className='level-duration' >{course.duration}</p>
-                                    <p className='level-duration'>{course.periodicity}</p>
+                                        <p className='level-duration' >{course.duration}</p>
+                                        <p className='level-duration'>{course.periodicity}</p>
                                     </div>
                                 </div>
                                 <p className='course-description'>{course.description_short}</p>

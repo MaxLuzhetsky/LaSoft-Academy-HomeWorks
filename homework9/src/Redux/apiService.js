@@ -8,7 +8,10 @@ export const api = createApi({
     endpoints:(builder)=>({
         getAllCourses:builder.query({
             query:()=>("/courses")
+        }),
+        getAllTeachers:builder.query({
+            query:()=>("/teachers")
         })
     })
 })
-export const {useGetAllCoursesQuery} = api
+export const {useGetAllCoursesQuery,useGetAllTeachersQuery} = api
