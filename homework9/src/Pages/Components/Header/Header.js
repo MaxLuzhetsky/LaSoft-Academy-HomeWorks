@@ -22,10 +22,18 @@ export default function Header() {
                             <Link onClick={() => setActiveCourse(true)} className={activeCourse ? "nav_menu_bttn active" :"nav_menu_bttn" } to="/courses">
                             <li>Courses</li>
                             </Link>
+                            <Link className="nav_menu_bttn" to="/courses">
                             <li><a className="nav_menu_bttn" href="">Teachers</a></li>
-                            <li><a className="nav_menu_bttn" href="">Prices</a></li>
-                            <li><a className="nav_menu_bttn" href="">About us</a></li>
+                            </Link>
+                            <Link  className="nav_menu_bttn"  to="/courses">
+                            <li>Prices</li>
+                            </Link>
+                            <Link  className="nav_menu_bttn"  to="/courses">
+                            <li>About us</li>
+                            </Link>
+                            <Link to="/courses">
                             <li><a className="nav_menu_apply_button" href="">Apply now</a></li>
+                            </Link>
                         </ul>
                     </div>
 

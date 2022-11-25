@@ -1,25 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import './courses.css'
+import { useGetAllCoursesQuery } from '../../../Redux/apiService'
 
 export default function CoursesMain() {
 
-    const [courses, setCourses] = useState([])
+    
 
-    useEffect(() => {
-        fetch('http://localhost:5000/courses')
-            .then((response) => {
-                return response.json();
-            })
-            .then((data) => {
-
-                setCourses(data);
-
-
-
-            });
-
-        console.log(courses)
-    }, [])
+    const {data:courses,...others} = useGetAllCoursesQuery()
+   
 
 
 
@@ -30,8 +18,8 @@ export default function CoursesMain() {
 
                 {courses.map((course) => (
 
-                    <div className='course-content'>
-                        <div key={course.id}>
+                    <div  className='course-content'>
+                        <div>
                             <img src={course.thumbnail_img_url} ></img>
                             <div  className='course-info'>
                                 <div className='name-and-price' >
