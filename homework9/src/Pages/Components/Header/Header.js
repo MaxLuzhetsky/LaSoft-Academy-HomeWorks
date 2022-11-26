@@ -25,10 +25,10 @@ export default function Header() {
                             <Link  className="nav_menu_bttn"  to="/courses">
                             <li>Prices</li>
                             </Link>
-                            <Link  className="nav_menu_bttn"  to="/courses">
+                            <Link  className="nav_menu_bttn"  to="/aboutUs">
                             <li>About us</li>
                             </Link>
-                            <Link to="/courses">
+                            <Link to="/apply">
                             <li><a className="nav_menu_apply_button" href="">Apply now</a></li>
                             </Link>
                         </ul>

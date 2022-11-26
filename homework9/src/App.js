@@ -1,12 +1,18 @@
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {store} from './Redux/store'
+
 import './index.css'
 import './normalize.css'
 import './reset.css'
+
 import MainPage from './Pages/Page/MainPage';
 import Courses from './Pages/Courses/Courses'
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Teachers from './Pages/Teacher/Teachers';
-import { Provider } from 'react-redux';
-import {store} from './Redux/store'
+import AboutUs from './Pages/About/AboutUs';
+import Apply from './Pages/Apply/Apply';
+
+
 
 
 function App() {
@@ -22,6 +28,12 @@ function App() {
       </Routes>
       <Routes>
         <Route path='/teachers' element={<Teachers/>}></Route>
+      </Routes>
+      <Routes>
+        <Route path='/aboutUs' element={<AboutUs/>}></Route>
+      </Routes>
+      <Routes>
+        <Route path='/apply' element={<Apply/>}></Route>
       </Routes>
     </Router>
    
