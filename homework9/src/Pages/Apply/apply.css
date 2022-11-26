@@ -1,11 +1,26 @@
 .apply-container {
     display: flex;
-    margin: 47px 135px 40px 135px;
+    margin: 47px 135px 120px 135px;
+}
+
+.apply-form-container {
+    margin-right: 181px;
+}
+
+.apply-form-title {
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    color: #000000;
+    margin-bottom: 12px;
 }
 
 .apply-form-description {
     margin-bottom: 20px;
 }
+
 
 .apply-button {
     background: #C2D2D2;
@@ -21,6 +36,7 @@
     padding: 9px 58px 9px 58px;
     color: white;
     border: none;
+    margin-top: 50px;
 }
 
 .apply-button:hover {
