@@ -50,6 +50,10 @@
 
 }
 
+.select-option {
+    padding: 10px 100px 10px 16px;
+}
+
 .form-row span {
     min-width: 144px;
 }
@@ -66,6 +70,12 @@
     font-size: 14px;
     line-height: 20px;
     color: #000000;
+    background: #FFFFFF;
+    /* Main 4 Shades / Main 43 */
+
+    border: 1px solid #C2D2D2;
+    border-radius: 10px;
+    padding: 10px 100px 10px 16px;
 }
 
 .inputs {

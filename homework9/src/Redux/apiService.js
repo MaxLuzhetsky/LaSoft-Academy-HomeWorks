@@ -11,7 +11,16 @@ export const api = createApi({
         }),
         getAllTeachers:builder.query({
             query:()=>("/teachers")
+        }),
+        createApplyInfo:builder.mutation({
+            query:()=>({
+                headers:{
+                    'Content-type':'application/json'
+                },
+                url:'/form/apply',
+                method:"POST",
+            })
         })
     })
 })
-export const {useGetAllCoursesQuery,useGetAllTeachersQuery} = api
+export const {useGetAllCoursesQuery,useGetAllTeachersQuery,useCreateApplyInfoMutation} = api
