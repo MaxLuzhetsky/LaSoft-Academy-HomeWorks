@@ -1,4 +1,6 @@
+import {Link, Routes, Route, useNavigate} from 'react-router-dom'
 
+import "../../../index.css"
 import topImage from "../img/top.png"
 import botImage from "../img/bot.png"
 import React from 'react'
@@ -22,7 +24,7 @@ export default function Main() {
                                 <li>Est eros, vestibulum cursus luctus luctus aenean molestie.</li>
                                 <li>Augue ultricies non tristique malesuada justo neque mi, pellentesque lacus.</li>
                             </ul>
-                            <a className="apply_button" href="">Apply now</a>
+                            <Link className='apply-link' to="/apply"><a className="apply_button" href="">Apply now</a></Link>
                         </div>
                     </div>
                     <div className="top_section_image_container">

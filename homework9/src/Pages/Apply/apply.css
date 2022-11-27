@@ -102,3 +102,62 @@
 .css-1okebmr-indicatorSeparator {
     display: none;
 }
+
+.applied-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.applied {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 111px 0 200px 0;
+}
+
+.applied img {
+    margin-bottom: 32px;
+}
+
+.applied h3 {
+    margin-bottom: 12px;
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+}
+
+.applied p {
+    margin-bottom: 32px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+}
+
+.applied-home-button {
+    background: #FFFFFF;
+    border: 1px solid #1B6C71;
+    border-radius: 10px;
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #1B6C71;
+    padding: 9px 33px 9px 33px;
+
+}
+
+.applied-link {
+    text-decoration: none;
+}

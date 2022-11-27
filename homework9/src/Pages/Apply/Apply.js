@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Select from 'react-select'
+import {Link, Routes, Route, useNavigate} from 'react-router-dom'
 
 import './apply.css'
 
@@ -8,6 +9,7 @@ import Header from '../Components/Header/Header'
 
 import pic from './img/pic.png'
 import { useCreateApplyInfoMutation } from '../../Redux/apiService'
+
 
 
 export default function Apply() {
@@ -19,6 +21,9 @@ export default function Apply() {
     const [email, setEmail] = useState("")
     const [phone, setPhone] = useState("")
     const [createReq , data] = useCreateApplyInfoMutation()
+
+    const navigate = useNavigate();
+
    
 
     const request = {
@@ -32,6 +37,7 @@ export default function Apply() {
     }
 
     const firstOptions = [
+        { value: "", label:"Choose your course"},
         { value: 'basic sketching', label: 'Basic Sketching' },
         { value: 'watercolor basics', label: 'Watercolor Basics' },
         { value: 'digital sketching', label: 'Digital Sketching' },
@@ -40,6 +46,7 @@ export default function Apply() {
     ]
 
     const secondOptions = [
+        { value: "" , label:"Choose your group"},
         { value: 'mon/wed/fri 6pm-9pm', label: 'mon/wed/fri 7pm-9pm' },
         { value: 'mon/wed/fri 7pm-9pm', label: 'mon/wed/fri 7pm-9pm' },
         { value: 'mon/wed/fri 8pm-9pm', label: 'mon/wed/fri 7pm-9pm' },
@@ -58,7 +65,7 @@ export default function Apply() {
         e.preventDefault();
         console.log(request)
         createReq(request)
-        
+        navigate('/applie');
     }
 
 
@@ -76,7 +83,7 @@ export default function Apply() {
                         <form onSubmit={createRequest}>
                             <div className='form-row'>
                                 <span >Course</span>
-                                <select className='form-row-select' value={course} onChange={handleSelectCourse}>
+                                <select className='form-row-select' value={course} onChange={handleSelectCourse} required>
                                     {firstOptions.map(option => (
                                                 <option key={option.value} value={option.value}>{option.label}</option>
                                     ))}
@@ -84,7 +91,7 @@ export default function Apply() {
                             </div>
                             <div className='form-row'>
                                 <span >Group</span>
-                                <select className='form-row-select' value={course} onChange={handleSelectGroups}>
+                                <select className='form-row-select' value={groups} onChange={handleSelectGroups} required >
                                     {secondOptions.map(option => (
                                                 <option className='select-option' key={option.value} value={option.value}>{option.label}</option>
                                     ))}

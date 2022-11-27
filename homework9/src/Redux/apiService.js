@@ -13,13 +13,7 @@ export const api = createApi({
             query:()=>("/teachers")
         }),
         createApplyInfo:builder.mutation({
-            query:()=>({
-                headers:{
-                    'Content-type':'application/json'
-                },
-                url:'/form/apply',
-                method:"POST",
-            })
+            query:()=> ('/form/apply')
         })
     })
 })

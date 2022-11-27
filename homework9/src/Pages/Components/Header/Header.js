@@ -28,7 +28,7 @@ export default function Header() {
                             <Link  className="nav_menu_bttn"  to="/aboutUs">
                             <li>About us</li>
                             </Link>
-                            <Link to="/apply">
+                            <Link className='apply-link' to="/apply">
                             <li><a className="nav_menu_apply_button" href="">Apply now</a></li>
                             </Link>
                         </ul>

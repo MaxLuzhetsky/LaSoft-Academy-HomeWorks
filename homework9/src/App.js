@@ -11,6 +11,7 @@ import Courses from './Pages/Courses/Courses'
 import Teachers from './Pages/Teacher/Teachers';
 import AboutUs from './Pages/About/AboutUs';
 import Apply from './Pages/Apply/Apply';
+import Applied from './Pages/Apply/Applied';
 
 
 
@@ -34,6 +35,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path='/apply' element={<Apply/>}></Route>
+      </Routes>
+      <Routes>
+        <Route path='/applie' element={<Applied/>}></Route>
       </Routes>
     </Router>
    

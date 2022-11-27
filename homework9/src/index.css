@@ -198,6 +198,9 @@
         margin: auto;
         text-decoration: none;
     }
+    .apply-link{
+        text-decoration: none;
+    }
 
     .apply_button:active {
         background: #60DFE8;
@@ -443,6 +446,9 @@
         color: white;
         font-size: 18px;
         margin-top: 40px;
+        text-decoration: none;
+    }
+    .apply-link{
         text-decoration: none;
     }
 
