@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import Select from 'react-select'
-import {Link, Routes, Route, useNavigate} from 'react-router-dom'
+import React from 'react'
+import { Link, Routes, Route, useNavigate } from 'react-router-dom'
+
 
 import './apply.css'
 
@@ -9,35 +9,31 @@ import Header from '../Components/Header/Header'
 
 import pic from './img/pic.png'
 import { useCreateApplyInfoMutation } from '../../Redux/apiService'
+import { useForm } from "react-hook-form";
 
 
 
 export default function Apply() {
-    
 
-    const [course, setCourse] = useState("")
-    const [groups, setGroups] = useState("")
-    const [fullName, setFullName] = useState("")
-    const [email, setEmail] = useState("")
-    const [phone, setPhone] = useState("")
-    const [createReq , data] = useCreateApplyInfoMutation()
-
-    const navigate = useNavigate();
 
    
+    const [createReq, data] = useCreateApplyInfoMutation()
 
-    const request = {
+    const navigate = useNavigate();
+    
+    const { register, handleSubmit } = useForm();
 
-        "courseId": course,
-        "groupId": groups,
-        "full_name": fullName,
-        "email": email,
-        "phone": phone
-
+    const onSubmit = (data) => { console.log(data)
+    navigate('/applie')
+     createReq(data)
     }
 
+
+
+    
+
     const firstOptions = [
-        { value: "", label:"Choose your course"},
+        { value: "", label: "Choose your course" },
         { value: 'basic sketching', label: 'Basic Sketching' },
         { value: 'watercolor basics', label: 'Watercolor Basics' },
         { value: 'digital sketching', label: 'Digital Sketching' },
@@ -46,29 +42,13 @@ export default function Apply() {
     ]
 
     const secondOptions = [
-        { value: "" , label:"Choose your group"},
+        { value: "", label: "Choose your group" },
         { value: 'mon/wed/fri 6pm-9pm', label: 'mon/wed/fri 7pm-9pm' },
         { value: 'mon/wed/fri 7pm-9pm', label: 'mon/wed/fri 7pm-9pm' },
         { value: 'mon/wed/fri 8pm-9pm', label: 'mon/wed/fri 7pm-9pm' },
         { value: 'mon/wed/fri 5pm-9pm', label: 'mon/wed/fri 7pm-9pm' }
 
     ]
-    const handleSelectCourse = event =>{
-        setCourse(event.target?.value)
-    }
-    const handleSelectGroups = event =>{
-        setGroups(event.target?.value)
-       
-    }
-
-    const createRequest = e => {
-        e.preventDefault();
-        console.log(request)
-        createReq(request)
-        navigate('/applie');
-    }
-
-
 
     return (
         <>
@@ -80,10 +60,10 @@ export default function Apply() {
                         leave us your contact information and we’ll reach out to you for confirmation and letting you know about further steps
                     </p>
                     <div>
-                        <form onSubmit={createRequest}>
+                        <form onSubmit={handleSubmit(onSubmit) }>
                             <div className='form-row'>
                                 <span >Course</span>
-                                <select className='form-row-select' value={course} onChange={handleSelectCourse} required>
+                                <select className='form-row-select' {...register("courseId")}   required>
                                     {firstOptions.map(option => (
                                                 <option key={option.value} value={option.value}>{option.label}</option>
                                     ))}
@@ -91,7 +71,7 @@ export default function Apply() {
                             </div>
                             <div className='form-row'>
                                 <span >Group</span>
-                                <select className='form-row-select' value={groups} onChange={handleSelectGroups} required >
+                                <select className='form-row-select' {...register("groupId")}  required >
                                     {secondOptions.map(option => (
                                                 <option className='select-option' key={option.value} value={option.value}>{option.label}</option>
                                     ))}
@@ -100,18 +80,18 @@ export default function Apply() {
                             <div className='inputs'>
                                 <div className='form-row-inputs'>
                                     <span >Full name</span>
-                                    <input onChange={e => setFullName(e.target.value)} className='form-row-input' type='text' required></input>
+                                    <input name="full_name" {...register("full_name")} className='form-row-input' type='text' required></input>
                                 </div>
                                 <div className='form-row-inputs'>
                                     <span >E-mail</span>
-                                    <input onChange={e => setEmail(e.target.value)} className='form-row-input' value={request.email} type='email' placeholder='email@email.com' required></input>
+                                    <input name='email' {...register("email")} className='form-row-input'  type='email' placeholder='email@email.com' required></input>
                                 </div>
                                 <div className='form-row-inputs'>
                                     <span >Phone number</span>
-                                    <input onChange={e => setPhone(e.target.value)} className='form-row-input' value={request.phone} type='tel' placeholder='(___)___-__-__' required ></input>
+                                    <input name='phone' {...register("phone")} className='form-row-input' type='tel' placeholder='(___)___-__-__' required ></input>
                                 </div>
                             </div>
-                            <button className='apply-button'>Apply</button>
+                            <button type='submit' className='apply-button'>Apply</button>
                         </form>
                     </div>
                 </div>
