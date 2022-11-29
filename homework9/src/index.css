@@ -198,7 +198,8 @@
         margin: auto;
         text-decoration: none;
     }
-    .apply-link{
+
+    .apply-link {
         text-decoration: none;
     }
 
@@ -448,7 +449,8 @@
         margin-top: 40px;
         text-decoration: none;
     }
-    .apply-link{
+
+    .apply-link {
         text-decoration: none;
     }
 
@@ -499,6 +501,16 @@
         border-radius: 10px;
         text-decoration: none;
         color: white;
+        border: none;
+        font-family: 'Baloo 2';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 26px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #FFFFFF;
     }
 
     .bottom_section_button:hover {

@@ -1,11 +1,17 @@
+import React, { useState } from 'react'
 import {Link, Routes, Route, useNavigate} from 'react-router-dom'
 
 import "../../../index.css"
 import topImage from "../img/top.png"
 import botImage from "../img/bot.png"
-import React from 'react'
+
+import Modal from './SubcribeModal/Modal'
+
 
 export default function Main() {
+    const [visible, setVisible] = useState(false)
+    
+
     return (
         <>
             <main>
@@ -39,9 +45,10 @@ export default function Main() {
                         <h3 className="bottom_section_title">Interested but currently have other plans?</h3>
                         <p className="bottom_section_text">Subscribe to our newsletter to stay tuned and get hottest updates and
                             deals</p>
-                        <a className="bottom_section_button" href="">Subscribe</a>
+                        <button className="bottom_section_button" onClick={() =>setVisible(true)} >Subscribe</button>
                     </div>
                 </section>
+                <Modal visible={visible} setVisible={setVisible}></Modal>
             </main>
 
         </>

@@ -21,7 +21,17 @@ export const api = createApi({
                     'Content-type': 'application/json; charset=UTF-8',
                 },
             })
+        }),
+        createSubscribeInfo:builder.mutation({
+            query:(payload) => ({
+                url:"/form/subscribe",
+                method:"POST",
+                body:payload,
+                headers:{
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+            })
         })
     })
 })
-export const {useGetAllCoursesQuery,useGetAllTeachersQuery,useCreateApplyInfoMutation} = api
+export const {useGetAllCoursesQuery,useGetAllTeachersQuery,useCreateApplyInfoMutation,useCreateSubscribeInfoMutation} = api
