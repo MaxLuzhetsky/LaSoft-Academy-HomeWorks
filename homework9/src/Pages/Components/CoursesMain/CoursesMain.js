@@ -1,14 +1,17 @@
-import React, { useEffect, useState } from 'react'
-import './courses.css'
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useGetAllCoursesQuery } from '../../../Redux/apiService'
 
+import './courses.css'
+
+
 export default function CoursesMain() {
-     
 
 
-    const { data:courses, ...others } = useGetAllCoursesQuery()
-    
 
+    const { data: courses, ...others } = useGetAllCoursesQuery()
+
+    const navigate = useNavigate();
 
 
 
@@ -17,7 +20,18 @@ export default function CoursesMain() {
             <h3 className='courses-title'>Pick your perfect course</h3>
             <div className='courses-list'>
                 {courses?.map((course) => (
-                    <div key={course.id} className='course-content'>
+                    <div key={course.id} onClick={() => navigate('/course', {
+                        state: {
+                            courseName: course.name,
+                            courseImg: course.full_img_url,
+                            courseLvl: course.level,
+                            courseDur: course.duration,
+                            courseDecr: course.description_full,
+                            coursePrice:course.price
+
+                        }
+                    })}
+                        className='course-content'>
                         <div>
                             <img src={course.thumbnail_img_url} ></img>
                             <div className='course-info'>

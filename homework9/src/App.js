@@ -12,6 +12,7 @@ import Teachers from './Pages/Teacher/Teachers';
 import AboutUs from './Pages/About/AboutUs';
 import Apply from './Pages/Apply/Apply';
 import Applied from './Pages/Apply/Applied';
+import CoursePage from './Pages/Components/CoursesMain/CoursePage/CoursePage';
 
 
 
@@ -38,6 +39,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path='/applie' element={<Applied/>}></Route>
+      </Routes>
+      <Routes>
+        <Route path='/course' element={<CoursePage/>}></Route>
       </Routes>
     </Router>
    

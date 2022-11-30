@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, Routes, Route, useNavigate } from 'react-router-dom'
+import {  useNavigate  } from 'react-router-dom'
 
 
 import './apply.css'
@@ -18,6 +18,9 @@ export default function Apply() {
 
    
     const [createReq, data] = useCreateApplyInfoMutation()
+
+    
+    
 
     const navigate = useNavigate();
     
@@ -65,15 +68,15 @@ export default function Apply() {
                                 <span >Course</span>
                                 <select className='form-row-select' {...register("courseId")}   required>
                                     {firstOptions.map(option => (
-                                                <option key={option.value} value={option.value}>{option.label}</option>
+                                                <option key={option.value} value={option.value} >{option.label}</option>
                                     ))}
                                 </select>
                             </div>
                             <div className='form-row'>
                                 <span >Group</span>
-                                <select className='form-row-select' {...register("groupId")}  required >
+                                <select className='form-row-select'  {...register("groupId")}  required >
                                     {secondOptions.map(option => (
-                                                <option className='select-option' key={option.value} value={option.value}>{option.label}</option>
+                                                <option className='select-option' key={option.value} value={option.value} >{option.label}</option>
                                     ))}
                                 </select>
                             </div>
