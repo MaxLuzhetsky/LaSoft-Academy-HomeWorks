@@ -26,9 +26,10 @@ export default function Apply() {
     
     const { register, handleSubmit } = useForm();
 
-    const onSubmit = (data) => { console.log(data)
-    navigate('/applie')
-     createReq(data)
+    const onSubmit = (data) => { 
+        createReq(data)
+        .then(() => navigate('/applie'))
+        .catch(error => console.error('error' , error))
     }
 
 

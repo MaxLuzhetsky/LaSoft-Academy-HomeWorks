@@ -15,19 +15,19 @@ export default function TeacherMain() {
                         <img src={teacher.photo}></img>
                         <h4 className='teacher-name'>{teacher.first_name} {teacher.last_name}</h4>
                         <div className='teacher-info'>
-                            <p className='info-element'>
+                            <div className='info-element'>
                                 <p className='info-element-span'><span>Course:</span></p>
 
                                 <p >{teacher.courses.map((course) => (<p className='info-element-content'>{course}</p>))}</p>
-                            </p>
-                            <p className='info-element'>
+                            </div>
+                            <div className='info-element'>
                                 <p className='info-element-span'><span>Education:</span></p>
                                 <p className='info-element-content'>{teacher.education}</p>
-                            </p>
-                            <p className='info-element'>
+                            </div>
+                            <div className='info-element'>
                                 <p className='info-element-span'><span>About me:</span></p>
                                 <p className='info-element-content'>{teacher.about}</p>
-                            </p>
+                            </div>
 
                         </div>
 

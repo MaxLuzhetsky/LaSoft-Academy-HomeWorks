@@ -1,6 +1,6 @@
 
 import React from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default function Footer() {
     return (
@@ -14,11 +14,15 @@ export default function Footer() {
                     </div>
                     <div>
                         <ul className="footer_menu">
-                            
-                            <li><a href="" className="footer_menu_bttn">Terms</a></li>
-                           
-                            <li><a href="" className="footer_menu_bttn">Privacy policy</a></li>
-                            <li><a href="" className="footer_menu_bttn">Help & Support</a></li>
+                            <Link className="footer_menu_bttn">
+                                <li>Terms</li>
+                            </Link>
+                            <Link className="footer_menu_bttn">
+                                <li>Privacy policy</li>
+                            </Link>
+                            <Link className="footer_menu_bttn">
+                                <li>Help & Support</li>
+                            </Link>
                         </ul>
                     </div>
 

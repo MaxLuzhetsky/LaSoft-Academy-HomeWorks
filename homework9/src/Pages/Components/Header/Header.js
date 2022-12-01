@@ -20,7 +20,7 @@ export default function Header() {
                             <li>Courses</li>
                             </Link>
                             <Link className="nav_menu_bttn" to="/teachers">
-                            <li><a className="nav_menu_bttn" href="">Teachers</a></li>
+                            <li>Teachers</li>
                             </Link>
                             <Link  className="nav_menu_bttn"  to="/courses">
                             <li>Prices</li>
@@ -29,13 +29,13 @@ export default function Header() {
                             <li>About us</li>
                             </Link>
                             <Link className='apply-link' to="/apply">
-                            <li><a className="nav_menu_apply_button" href="">Apply now</a></li>
+                            <li><button className="nav_menu_apply_button" >Apply now</button></li>
                             </Link>
                         </ul>
                     </div>
 
                     <input id="toggle" type="checkbox" />
-                    <label for="toggle" className="hamburger">
+                    <label htmlFor="toggle" className="hamburger">
                         <div className="top-bun" />
                         <div className="meat" />
                         <div className="bottom-bun" />

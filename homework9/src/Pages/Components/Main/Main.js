@@ -11,6 +11,9 @@ import Modal from './SubcribeModal/Modal'
 export default function Main() {
     const [visible, setVisible] = useState(false)
     
+    const navigate = useNavigate();
+
+    
 
     return (
         <>
@@ -30,7 +33,7 @@ export default function Main() {
                                 <li>Est eros, vestibulum cursus luctus luctus aenean molestie.</li>
                                 <li>Augue ultricies non tristique malesuada justo neque mi, pellentesque lacus.</li>
                             </ul>
-                            <Link className='apply-link' to="/apply"><a className="apply_button" href="">Apply now</a></Link>
+                            <Link className='apply-link' to="/apply"><button className="apply_button" >Apply now</button></Link>
                         </div>
                     </div>
                     <div className="top_section_image_container">
