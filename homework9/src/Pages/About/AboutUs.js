@@ -49,7 +49,6 @@ export default function AboutUs() {
                     <div className='address-container'>
                         <img src={address}></img>
                         <span>2464 Royal Ln. Mesa, New Jersey 45463</span>
-
                     </div>
                     <div className='address-container'>
                         <img src={number}></img>

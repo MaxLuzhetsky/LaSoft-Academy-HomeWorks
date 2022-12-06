@@ -1,5 +1,5 @@
-import React from 'react'
-import {  useNavigate  } from 'react-router-dom'
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 
 import './apply.css'
@@ -9,32 +9,27 @@ import Header from '../Components/Header/Header'
 
 import pic from './img/pic.png'
 import { useCreateApplyInfoMutation } from '../../Redux/apiService'
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
+import Select from 'react-select'
+
+
 
 
 
 export default function Apply() {
-
-
-   
     const [createReq, data] = useCreateApplyInfoMutation()
-
-    
-    
+    const [course, setCourse] = useState("")
+    const [group, setGroup] = useState("")
 
     const navigate = useNavigate();
-    
-    const { register, handleSubmit } = useForm();
 
-    const onSubmit = (data) => { 
+    const { register, handleSubmit, control } = useForm();
+
+    const onSubmit = (data) => {
         createReq(data)
-        .then(() => navigate('/applie'))
-        .catch(error => console.error('error' , error))
+            .then(() => navigate('/applie'))
+            .catch(error => console.error('error', error))
     }
-
-
-
-    
 
     const firstOptions = [
         { value: "", label: "Choose your course" },
@@ -53,6 +48,12 @@ export default function Apply() {
         { value: 'mon/wed/fri 5pm-9pm', label: 'mon/wed/fri 7pm-9pm' }
 
     ]
+    const dropdownIndicatorStyles = (base, state) => {
+        let changes = {
+            backgroundColor: 'blue',
+        };
+        return Object.assign(base, changes);
+    };
 
     return (
         <>
@@ -64,9 +65,18 @@ export default function Apply() {
                         leave us your contact information and we’ll reach out to you for confirmation and letting you know about further steps
                     </p>
                     <div>
-                        <form onSubmit={handleSubmit(onSubmit) }>
+                        <form onSubmit={handleSubmit(onSubmit)}>
                             <div className='form-row'>
                                 <span >Course</span>
+                                {/* <Select
+                                    className='form-row-select'
+                                    styles={{ dropdownIndicator: dropdownIndicatorStyles }}
+                                    onChange={(choice) => setCourse(choice.value)}
+                                    options={firstOptions}
+                                    {...register("courseId", { value: course })}
+                                    required
+                                >
+                                </Select> */}
                                 <select className='form-row-select' {...register("courseId")}   required>
                                     {firstOptions.map(option => (
                                                 <option key={option.value} value={option.value} >{option.label}</option>
@@ -75,6 +85,14 @@ export default function Apply() {
                             </div>
                             <div className='form-row'>
                                 <span >Group</span>
+                                {/* <Select
+                                    className='form-row-select'
+                                    name='groups'
+                                    onChange={(choice) => setGroup(choice.value)}
+                                    options={secondOptions}
+                                    {...register("groupId", { value: group })}
+                                    required
+                                ></Select> */}
                                 <select className='form-row-select'  {...register("groupId")}  required >
                                     {secondOptions.map(option => (
                                                 <option className='select-option' key={option.value} value={option.value} >{option.label}</option>
@@ -88,7 +106,7 @@ export default function Apply() {
                                 </div>
                                 <div className='form-row-inputs'>
                                     <span >E-mail</span>
-                                    <input name='email' {...register("email")} className='form-row-input'  type='email' placeholder='email@email.com' required></input>
+                                    <input name='email' {...register("email")} className='form-row-input' type='email' placeholder='email@email.com' required></input>
                                 </div>
                                 <div className='form-row-inputs'>
                                     <span >Phone number</span>

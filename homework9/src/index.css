@@ -22,7 +22,7 @@
         height: 60px;
     }
 
-    /*BURGEr*/
+
     #toggle {
         display: none;
     }
@@ -44,9 +44,6 @@
         transition: all 0.3s ease-in-out;
     }
 
-    /**
-  Nav Styles
-  **/
     .nav {
         position: fixed;
         width: 100%;
@@ -102,9 +99,6 @@
         height: 100%;
     }
 
-    /**
-  Animations
-  **/
     #toggle:checked+.hamburger .top-bun {
         transform: rotate(-45deg);
         margin-top: 25px;
@@ -232,7 +226,6 @@
         font-size: 24px;
         line-height: 38px;
         margin-bottom: 18px;
-
     }
 
     .bottom_section_text {

@@ -51,9 +51,7 @@
     border-radius: 15px;
     border-collapse: separate;
     overflow: hidden;
-
     margin-bottom: 28px;
-
 }
 
 .course-content:hover {
@@ -70,10 +68,8 @@
     line-height: 16px;
     display: flex;
     align-items: center;
-
     color: #000000;
 }
-
 
 .course-info {
     margin: 12px;
@@ -123,14 +119,10 @@ span {
     font-weight: 300;
     font-size: 12px;
     line-height: 16px;
-    /* or 133% */
-
     display: flex;
     align-items: center;
-
     color: #000000;
     margin: 10px 0 16px 0;
-
 }
 
 .course-apply-button {
@@ -142,9 +134,6 @@ span {
     display: flex;
     align-items: center;
     text-align: center;
-
-    /* Primary / White */
-
     color: #FFFFFF;
     background: #59ABB0;
     border-radius: 10px;

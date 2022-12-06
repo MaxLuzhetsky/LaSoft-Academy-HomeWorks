@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import './teacher.css'
 import { useGetAllTeachersQuery } from '../../../Redux/apiService'
 
 export default function TeacherMain() {
 
-    const {data:teachers,...others} = useGetAllTeachersQuery()
+    const {data:teachers} = useGetAllTeachersQuery()
 
     return (
         <div className='teachers-container'>
@@ -18,7 +18,7 @@ export default function TeacherMain() {
                             <div className='info-element'>
                                 <p className='info-element-span'><span>Course:</span></p>
 
-                                <p >{teacher.courses.map((course) => (<p className='info-element-content'>{course}</p>))}</p>
+                                <div>{teacher.courses.map((course) => (<p className='info-element-content' >{course}</p>))}</div>
                             </div>
                             <div className='info-element'>
                                 <p className='info-element-span'><span>Education:</span></p>

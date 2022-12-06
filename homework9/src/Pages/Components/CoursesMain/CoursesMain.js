@@ -7,13 +7,9 @@ import './courses.css'
 
 export default function CoursesMain() {
 
-
-
-    const { data: courses, ...others } = useGetAllCoursesQuery()
+    const { data: courses } = useGetAllCoursesQuery()
 
     const navigate = useNavigate();
-
-
 
     return (
         <div className='courses-container'>
@@ -28,7 +24,6 @@ export default function CoursesMain() {
                             courseDur: course.duration,
                             courseDecr: course.description_full,
                             coursePrice:course.price
-
                         }
                     })}
                         className='course-content'>

@@ -4,7 +4,6 @@ import TeacherMain from "../Components/TeacherMain/TeacherMain"
 import Footer from "../Components/Footer/Footer"
 
 export default function Teachers() {
-
     
   return (
     <>

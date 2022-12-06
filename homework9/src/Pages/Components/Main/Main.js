@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {Link, Routes, Route, useNavigate} from 'react-router-dom'
+import {Link } from 'react-router-dom'
 
 import "../../../index.css"
 import topImage from "../img/top.png"
@@ -9,12 +9,9 @@ import Modal from './SubcribeModal/Modal'
 
 
 export default function Main() {
+
     const [visible, setVisible] = useState(false)
     
-    const navigate = useNavigate();
-
-    
-
     return (
         <>
             <main>
@@ -53,7 +50,6 @@ export default function Main() {
                 </section>
                 <Modal visible={visible} setVisible={setVisible}></Modal>
             </main>
-
         </>
     )
 }

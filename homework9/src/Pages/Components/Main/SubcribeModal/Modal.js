@@ -10,7 +10,6 @@ import pic from './img/right.png'
 
 export default function Modal({ visible, setVisible }) {
 
-    
     const { register, handleSubmit } = useForm();
     const [createReq, data] = useCreateSubscribeInfoMutation()
     const onSubmit = (data) => {
@@ -19,14 +18,11 @@ export default function Modal({ visible, setVisible }) {
         setVisible(false)
     }
 
-
-
     return (
         <div className={visible ? "subscribe-container active" : "subscribe-container"}>
             <div className='subscribe'>
                 <div className='subscribe-left'>
                     <button className='subscribe-cross-button' onClick={() => setVisible(false)}>x</button>
-
                     <div className='subscribe-form'>
                         <h3>Give us your email to stay tuned!</h3>
                         <div className='subscribe-input'>
@@ -38,10 +34,7 @@ export default function Modal({ visible, setVisible }) {
                     </div>
                 </div>
                 <img src={pic}></img>
-
-
             </div>
-
         </div>
     )
 }
