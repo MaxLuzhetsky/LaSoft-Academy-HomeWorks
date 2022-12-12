@@ -7,10 +7,15 @@ import './apply.css'
 import Footer from '../Components/Footer/Footer'
 import Header from '../Components/Header/Header'
 
-import pic from './img/pic.png'
-import { useCreateApplyInfoMutation } from '../../Redux/apiService'
+
+
 import { useForm, Controller } from "react-hook-form";
 import Select from 'react-select'
+
+
+import pic from './img/pic.png'
+import { useCreateApplyInfoMutation } from '../../Redux/apiService'
+
 
 
 
@@ -18,12 +23,14 @@ import Select from 'react-select'
 
 export default function Apply() {
     const [createReq, data] = useCreateApplyInfoMutation()
-    const [course, setCourse] = useState("")
-    const [group, setGroup] = useState("")
 
     const navigate = useNavigate();
 
-    const { register, handleSubmit, control } = useForm();
+    const { register,
+        handleSubmit,
+        control
+    } = useForm();
+
 
     const onSubmit = (data) => {
         createReq(data)
@@ -32,7 +39,6 @@ export default function Apply() {
     }
 
     const firstOptions = [
-        { value: "", label: "Choose your course" },
         { value: 'basic sketching', label: 'Basic Sketching' },
         { value: 'watercolor basics', label: 'Watercolor Basics' },
         { value: 'digital sketching', label: 'Digital Sketching' },
@@ -41,19 +47,36 @@ export default function Apply() {
     ]
 
     const secondOptions = [
-        { value: "", label: "Choose your group" },
         { value: 'mon/wed/fri 6pm-9pm', label: 'mon/wed/fri 7pm-9pm' },
         { value: 'mon/wed/fri 7pm-9pm', label: 'mon/wed/fri 7pm-9pm' },
         { value: 'mon/wed/fri 8pm-9pm', label: 'mon/wed/fri 7pm-9pm' },
         { value: 'mon/wed/fri 5pm-9pm', label: 'mon/wed/fri 7pm-9pm' }
 
     ]
-    const dropdownIndicatorStyles = (base, state) => {
-        let changes = {
-            backgroundColor: 'blue',
-        };
-        return Object.assign(base, changes);
-    };
+    const styles = {
+        control:(provided,state)=>({
+            ...provided,
+            minWidth:'295px',
+            width:'295px',
+            borderRadius:"10px",
+            fontFamily:'Poppins',
+            fontSize:'14px',
+            padding:'2px'
+        }),
+        option:(provided,state)=>({
+            ...provided,
+            padding:'2px',
+            minHeight:'30px',
+            height:'30px',
+            fontFamily:'Poppins'
+        }),
+        singleValue:(provided,state)=>({
+            ...provided,
+            padding:'2px'
+        })
+    }
+
+
 
     return (
         <>
@@ -68,36 +91,29 @@ export default function Apply() {
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <div className='form-row'>
                                 <span >Course</span>
-                                {/* <Select
-                                    className='form-row-select'
-                                    styles={{ dropdownIndicator: dropdownIndicatorStyles }}
-                                    onChange={(choice) => setCourse(choice.value)}
-                                    options={firstOptions}
-                                    {...register("courseId", { value: course })}
-                                    required
-                                >
-                                </Select> */}
-                                <select className='form-row-select' {...register("courseId")}   required>
-                                    {firstOptions.map(option => (
-                                                <option key={option.value} value={option.value} >{option.label}</option>
-                                    ))}
-                                </select>
+                                <Controller
+                                    name="courseId"
+                                    control={control}
+                                    render={({ field }) => <Select
+                                        {...field}
+                                        options={firstOptions}
+                                        styles={styles}
+                                        required
+                                    />}
+                                />
                             </div>
                             <div className='form-row'>
                                 <span >Group</span>
-                                {/* <Select
-                                    className='form-row-select'
-                                    name='groups'
-                                    onChange={(choice) => setGroup(choice.value)}
-                                    options={secondOptions}
-                                    {...register("groupId", { value: group })}
-                                    required
-                                ></Select> */}
-                                <select className='form-row-select'  {...register("groupId")}  required >
-                                    {secondOptions.map(option => (
-                                                <option className='select-option' key={option.value} value={option.value} >{option.label}</option>
-                                    ))}
-                                </select>
+                                <Controller
+                                    name="groupId"
+                                    control={control}
+                                    render={({ field }) => <Select
+                                        {...field}
+                                        options={secondOptions}
+                                        styles={styles}
+                                        required
+                                    />}
+                                />
                             </div>
                             <div className='inputs'>
                                 <div className='form-row-inputs'>
