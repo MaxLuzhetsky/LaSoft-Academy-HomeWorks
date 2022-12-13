@@ -1,0 +1,159 @@
+.apply-container {
+    display: flex;
+    margin: 47px 135px 120px 135px;
+}
+
+.apply-form-container {
+    margin-right: 181px;
+}
+
+.apply-form-title {
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    color: #000000;
+    margin-bottom: 12px;
+}
+
+.apply-form-description {
+    margin-bottom: 20px;
+}
+
+
+.apply-button {
+    background: #C2D2D2;
+    border-radius: 10px;
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 9px 58px 9px 58px;
+    color: white;
+    border: none;
+    margin-top: 50px;
+}
+
+.apply-button:hover {
+    background: #59ABB0;
+    border-radius: 10px;
+}
+
+.form-row {
+    display: flex;
+    margin-bottom: 16px;
+
+}
+
+.select-option {
+    padding: 10px 100px 10px 16px;
+}
+
+.form-row span {
+    min-width: 144px;
+    margin-right: 8px;
+}
+
+select {
+    background-color: white;
+    border: thin solid blue;
+    border-radius: 4px;
+    display: inline-block;
+    font: inherit;
+    line-height: 1.5em;
+    padding: 0.5em 3.5em 0.5em 1em;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.inputs {
+    margin-top: 24px;
+}
+
+.form-row-inputs {
+    display: flex;
+    margin-right: 8px;
+    margin-bottom: 24px;
+}
+
+.form-row-inputs span {
+    min-width: 151px;
+}
+
+.form-row-input {
+    padding: 10px 84px 10px 16px;
+    background: #FFFFFF;
+    border: 1px solid #C2D2D2;
+    border-radius: 10px;
+}
+
+.css-1okebmr-indicatorSeparator {
+    display: none;
+}
+
+.applied-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.applied {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 111px 0 200px 0;
+}
+
+.applied img {
+    margin-bottom: 32px;
+}
+
+.applied h3 {
+    margin-bottom: 12px;
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+}
+
+.applied p {
+    margin-bottom: 32px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+}
+
+.applied-home-button {
+    background: #FFFFFF;
+    border: 1px solid #1B6C71;
+    border-radius: 10px;
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #1B6C71;
+    padding: 9px 33px 9px 33px;
+}
+
+.applied-link {
+    text-decoration: none;
+}

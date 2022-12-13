@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+.courses-container {
+    display: flex;
+    flex-direction: column;
+    margin: 47px 135px 28px 135px;
+}
+
+.courses-title {
+    margin-bottom: 20px;
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+.courses-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 145px;
+    align-items: center;
+}
+
+.name-and-price {
+    display: flex;
+    justify-content: space-between;
+}
+
+.course-price {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    color: #1B6C71;
+}
+
+.course-content {
+    display: flex;
+    min-width: 280px;
+    max-width: 280px;
+    min-height: 372px;
+    max-height: 372px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 4px #93A3A3;
+    border-radius: 15px;
+    border-collapse: separate;
+    overflow: hidden;
+    margin: auto;
+    margin-bottom: 28px;
+}
+
+.course-content:hover {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px #93A3A3;
+    border-radius: 15px;
+}
+
+.course-name {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+.course-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 12px;
+    min-height: 190px;
+}
+
+.course-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+
+.level-duration {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 120%;
+    text-align: right;
+    color: #000000;
+}
+
+.course-level {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.course-duration {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+
+span {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 120%;
+    display: flex;
+    align-items: center;
+    color: #4F5D5D;
+}
+
+.course-duration div {
+    text-align: right;
+}
+
+.course-description {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    margin: 10px 0 16px 0;
+}
+
+.course-apply-button {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    background: #59ABB0;
+    border-radius: 10px;
+    padding: 9px 109px 9px 109px;
+    border: none;
+}
+
+.course-apply-button:hover {
+    background: #1B6C71;
+    box-shadow: 0px 0px 4px #59ABB0;
+}

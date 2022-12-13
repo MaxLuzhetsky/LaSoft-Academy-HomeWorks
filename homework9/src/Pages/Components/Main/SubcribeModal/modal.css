@@ -1,0 +1,98 @@
+.subscribe-container.active {
+    background: rgba(230, 235, 239, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    pointer-events: all;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    transition: 0.5s;
+}
+
+.subscribe-container {
+    opacity: 1;
+    pointer-events: none;
+    transition: 0.5s;
+    display: none;
+}
+
+.subscribe-cross-button {
+    background: none;
+    border: none;
+    color: #4F5D5D;
+    font-family: 'Baloo 2';
+    font-size: 24px;
+}
+
+.subscribe {
+    width: 776px;
+    height: 512px;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    background: #FFFFFF;
+    border-radius: 15px;
+}
+
+.subscribe-left {
+    padding: 32px;
+}
+
+.subscribe-form {
+    margin-top: 124px;
+}
+
+.subscribe-form h3 {
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+
+.subscribe-email {
+    min-width: 204px;
+    background: #FFFFFF;
+    border: 1px solid #C2D2D2;
+    border-radius: 10px;
+    padding: 10px 0 10px 16px;
+    margin-right: 24px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+.subscribe-input{
+
+    display: flex;
+    flex-direction: row;
+    margin-top: 29px;
+}
+.subscribe-input form{
+    display: flex;
+}
+
+.subscribe-input button {
+    background: #59ABB0;
+    border-radius: 10px;
+    padding: 9px 45px 9px 45px;
+    color: white;
+    border: none;
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}

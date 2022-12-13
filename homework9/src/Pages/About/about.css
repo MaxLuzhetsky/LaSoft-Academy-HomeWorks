@@ -1,0 +1,59 @@
+.about-us-container {
+    display: flex;
+    margin: 47px 135px 40px 135px;
+    min-width: 574px;
+    height: auto;
+}
+
+.about-us-text {
+    display: flex;
+    flex-direction: column;
+    margin-right: 140px;
+}
+
+.about-us-title {
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.about-us-par {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+}
+
+.about-us-map {
+    margin-bottom: 29px;
+}
+
+.address-container {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.address-container span {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+}
+
+.address-container img {
+    margin-right: 20px;
+}
+
+.other-icons {
+    margin-right: 32px;
+}
